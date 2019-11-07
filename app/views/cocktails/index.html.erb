@@ -1,0 +1,18 @@
+<div class="nav">
+  <h1><%= link_to "🍹🍸", cocktails_path %></h1>
+  <%= link_to "Add a new cocktail", new_cocktail_path, :class => "btn" %>
+</div>
+
+
+<div class="container">
+  <h2>cocktails</h2>
+  <div class="banner">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      <% end %>
+    </div>
+</div>
+</div>

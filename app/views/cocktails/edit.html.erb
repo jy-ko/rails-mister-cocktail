@@ -1,0 +1,17 @@
+<h1><%= link_to "🍹🍸", cocktails_path %></h1>
+
+<h1>Edit your cocktail</h1>
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.submit %>
+<% end %>
+
+<% @cocktail.doses.each do |dose| %>
+      <p> <%= dose.description %> | <%= dose.ingredient.name %> </p>
+        <%= link_to dose_path(dose), method: :delete do %>
+          <p>remove</p>
+    <% end %>
+<% end %>
+
+<%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail) %>
