@@ -13,27 +13,21 @@
   </div>
 </div>
 
-
-
-<div class="main">
-  <div class="container pt-5">
+<div class="container pt-5">
         <div class="cards">
         <% @cocktails.each do |cocktail| %>
           <%if cocktail.photo.file %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+              <p><%= link_to cocktail.name, cocktail_path(cocktail)%></p>
             </div>
           <% else %>
-
+              <p><%= link_to cocktail.name, cocktail_path(cocktail)%></p>
           <% end %>
-
-              <p>
-                <%= link_to cocktail.name, cocktail_path(cocktail)%>
-              </p>
-          </div>
         <% end %>
       </div>
-  </div>
 </div>
+
+
 
 <div class="footer">
   <div class="footer-links">
