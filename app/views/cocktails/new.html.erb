@@ -1,8 +1,14 @@
-<h1><%= link_to "🍹🍸", cocktails_path %></h1>
-<h1>Add a cocktail</h1>
+<div class="nav">
+  <h3><%= link_to "Shaker🍸", cocktails_path %></h3>
 
+</div>
 
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit%>
-<% end %>
+<div class="container pt-3">
+  <p>Add a cocktail</p>
+
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.submit%>
+  <% end %>
+
+</div>

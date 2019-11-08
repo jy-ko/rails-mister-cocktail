@@ -1,18 +1,40 @@
 <div class="nav">
-  <h1><%= link_to "🍹🍸", cocktails_path %></h1>
-  <%= link_to "Add a new cocktail", new_cocktail_path, :class => "btn" %>
+  <h3><%= link_to "Shaker🍸", cocktails_path %></h3>
+  <%= link_to "Add a new cocktail", new_cocktail_path, :class => "btn-flat" %>
 </div>
 
 
-<div class="container">
-  <h2>cocktails</h2>
-  <div class="banner">
-    <div class="row">
-      <% @cocktails.each do |cocktail| %>
-        <div class="col">
-          <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        </div>
-      <% end %>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+  <div class="container">
+    <h1>Shaker</h1>
+    <p>Save your favourite cocktail recipes and experiment!</p>
+
+    <a href="https://www.youtube.com/watch?v=HsEWW5wMq8Q">Need Inspirations?</a>
+  </div>
 </div>
+
+
+
+<div class="main">
+  <div class="container pt-5">
+        <div class="cards">
+        <% @cocktails.each do |cocktail| %>
+            <div class="card-category">
+              <p>
+                <%= link_to cocktail.name, cocktail_path(cocktail) %>
+              </p>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
 </div>
