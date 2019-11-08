@@ -31,9 +31,14 @@
 
 .cocktail-card{
   color: white;
-  height: 100vh;
+  height: 50vh;
+
   background-size: cover;
   background-position: center;
+  border-radius: 8px;
+}
+.card-round {
+  border-radius: 8px;
 }
 
 

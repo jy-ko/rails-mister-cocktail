@@ -2,17 +2,23 @@
   <h3><%= link_to "Shaker🍸", cocktails_path %></h3>
 </div>
 
-<%= cl_image_tag("uayxjmemppxwfwnzfnam",
-      width: 400, height: 300, crop: :fill) %>
-
 <div class="container pt-3">
-  <p>Add a cocktail</p>
+  <div class="row">
+    <div class="col">
+    <%= cl_image_tag("u2t1lytfscoab5xxm7kl",
+          width: 500, height: 400, crop: :fill, :class=> "card-round" )%>
+    </div>
+    <div class="col">
+      <div class="container pt-3">
+        <h3>Add a cocktail</h3>
 
-  <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit%>
-  <% end %>
-
+        <%= simple_form_for @cocktail do |f| %>
+          <%= f.input :name %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit%>
+        <% end %>
+      </div>
+  </div>
+  </div>
 </div>
