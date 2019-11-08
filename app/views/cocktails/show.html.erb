@@ -7,12 +7,16 @@
   <h1><%= @cocktail.name %></h1>
   <% @cocktail.doses.each do |dose| %>
     <p><%=  dose.description %> | <%= dose.ingredient.name %></p>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-</div>
 
   <% end %>
 
+    <%if @cocktail.photo.file %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo %>')">
+      </div>
+    <% else %>
 
+    <% end %>
+</div>
   <%= link_to "Edit", edit_cocktail_path %>
   <%= link_to "Delete", cocktail_path(@cocktail), method: :delete%>
 </div>
